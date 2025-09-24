@@ -1,0 +1,6 @@
+src/
+build/
+devel/
+.vscode/
+*.log
+.catkin_workspace
