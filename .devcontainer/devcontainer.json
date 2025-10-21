@@ -18,7 +18,11 @@
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace,type=bind,consistency=cached",
     "features": {
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
     },
     "customizations": {
         "vscode": {
@@ -31,9 +35,11 @@
                 "ms-vscode.cmake-tools",
                 "ms-azuretools.vscode-docker",
                 "dotjoshjohnson.xml",
-                "smilerobotics.urdf",
-                "ms-iot.vscode-ros",
-                "azurity.pcd-viewer"
+                "ranch-hand-robotics.rde-pack",
+                "azurity.pcd-viewer",
+                "davidanson.vscode-markdownlint",
+                "xaver.clang-format",
+                "mine.cpplint"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash"

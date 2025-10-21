@@ -1,5 +1,25 @@
 FROM osrf/ros:noetic-desktop-full
 
+# 设置环境变量，防止 apt-get 交互式弹窗
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 安装基础依赖
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    lsb-release \
+    locales \
+    sudo \
+    build-essential \
+    git \
+    vim \
+    clang-format \
+    bash-completion \
+    libcgal-dev \
+    python3-pip \
+    librange-v3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # --- 创建非 root 用户 (关键部分) ---
 # 接收来自 devcontainer.json 的构建参数
 ARG USER_UID=1000
